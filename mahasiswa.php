@@ -1,4 +1,8 @@
-<?php $page = 'mahasiswa'; include 'template/header.php' ?>
+<?php 
+$page = 'mahasiswa'; 
+include 'template/header.php'; 
+$conn = mysqli_connect("localhost", "root", "", "db_mhs");
+?>
 
     <!-- Content -->
         <div class="container-xl mt-3">
@@ -22,26 +26,33 @@
                             </tr>
                         </thead>
 
+                        <?php 
+                        $query = mysqli_query($conn, "SELECT * FROM tb_mhs");
+                        $no = 1;
+                        while($mhs = mysqli_fetch_array($query)) {
+                        ?>
+
                         <tbody>
                             <tr>
-                                <th scope="row">1</th>
+                                <th scope="row"><?= $no++; ?></th>
                                 <td>
-                                    <a class="badge bg-warning" href="mahasiswa-ubah.php">Ubah</a> <a class="badge bg-danger" href="">Hapus</a>
+                                    <a class="badge bg-warning" href="mahasiswa-ubah.php?id=<?= $mhs['id']; ?>">Ubah</a>
+                                    <a class="badge bg-danger" href="mahasiswa-hapus.php?id=<?= $mhs['id']; ?>" onclick="return confirm('Apakah yakin akan menghapus pada data ini???')">Hapus</a>
                                 </td>
                                 <td>
-                                    <img src=".." alt="" width="100">
+                                    <img src="assets/img/<?= $mhs['gambar']; ?>" alt="<?= $mhs['nama']; ?>" width="100">
                                 </td>
                                 <td>
-                                    2017110019
+                                    <?= $mhs['npm']; ?>
                                 </td>
                                 <td>
-                                    M Sandy Yudha
+                                    <?= $mhs['nama']; ?>
                                 </td>
                                 <td>
-                                    muhammadsandy74@gmail.com
+                                    <?= $mhs['email']; ?>
                                 </td>
                                 <td>
-                                    Teknik Informatika
+                                    <?= $mhs['jurusan']; } ?>
                                 </td>
                             </tr>
                         </tbody>
