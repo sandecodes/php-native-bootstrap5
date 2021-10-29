@@ -51,7 +51,7 @@ if(isset($_POST['simpan'])) {
                     <label for="gambar" class="form-label">Gambar</label>
                     <input type="text" class="form-control" id="gambar" name="gambar">
                 </div>
-                <button type="submit" name="simpan" class="btn btn-primary mb-5" name="submit">Submit</button>
+                <button type="submit" name="simpan" class="btn btn-primary mb-5">Submit</button>
             </form>
             <a href="mahasiswa.php">&laquo; Back to mahasiswa</a>
         </div>
