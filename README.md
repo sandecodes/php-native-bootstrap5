@@ -1,3 +1,3 @@
 # php-native-bootstrap5
 
-Belajar Pemrograman Dasar PHP menggunakan framework CSS Bootstrap 5.
+Belajar Pemrograman Dasar CRUD PHP + MySQL menggunakan framework CSS Bootstrap 5.
