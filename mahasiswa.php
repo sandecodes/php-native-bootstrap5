@@ -27,7 +27,7 @@ $conn = mysqli_connect("localhost", "root", "", "db_mhs");
                         </thead>
 
                         <?php 
-                        $query = mysqli_query($conn, "SELECT * FROM tb_mhs");
+                        $query = mysqli_query($conn, "SELECT * FROM tb_mhs ORDER BY npm ASC");
                         $no = 1;
                         while($mhs = mysqli_fetch_array($query)) {
                         ?>
